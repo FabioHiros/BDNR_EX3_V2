@@ -91,8 +91,7 @@ class UpdateUserStrategy(UpdateStrategy):
             user["cnpj"] = cnpj
 
     def _manage_addresses(self, user):
-        """Helper method to manage user addresses"""
-        # Display current addresses
+       
         addresses = user.get("endereco", [])
         if addresses:
             print("\nEndereços atuais:")
@@ -101,7 +100,7 @@ class UpdateUserStrategy(UpdateStrategy):
         else:
             print("\nNenhum endereço cadastrado.")
         
-        # Address management options
+    
         print("\nOpções:")
         print("1. Adicionar novo endereço")
         print("2. Atualizar endereço existente")
@@ -111,7 +110,7 @@ class UpdateUserStrategy(UpdateStrategy):
         option = input("Escolha uma opção: ")
         
         if option == '1':
-            # Add new address
+         
             new_address = self._get_address_input()
             if "endereco" not in user:
                 user["endereco"] = []
@@ -119,7 +118,7 @@ class UpdateUserStrategy(UpdateStrategy):
             print("Endereço adicionado com sucesso.")
             
         elif option == '2' and addresses:
-            # Update existing address
+           
             idx = int(input("Digite o número do endereço a ser atualizado: ")) - 1
             if 0 <= idx < len(addresses):
                 updated_address = self._get_address_input()
@@ -129,7 +128,7 @@ class UpdateUserStrategy(UpdateStrategy):
                 print("Índice de endereço inválido.")
                 
         elif option == '3' and addresses:
-            # Remove address
+          
             idx = int(input("Digite o número do endereço a ser removido: ")) - 1
             if 0 <= idx < len(addresses):
                 del user["endereco"][idx]
@@ -138,13 +137,13 @@ class UpdateUserStrategy(UpdateStrategy):
                 print("Índice de endereço inválido.")
                 
         elif option == '4':
-            # Return to main menu
+          
             return
         else:
             print("Opção inválida ou não há endereços para gerenciar.")
     
     def _get_address_input(self):
-        """Helper method to get address input from the user"""
+        
         street = input("Rua: ")
         number = input("Número: ")
         neighborhood = input("Bairro: ")

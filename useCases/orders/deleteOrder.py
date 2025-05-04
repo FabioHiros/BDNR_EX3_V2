@@ -131,7 +131,7 @@ class DeleteOrderStrategy(DeleteStrategy):
         return True
     
     def _delete_order(self, db, order, order_id, buyer):
-        """Helper method to permanently delete an order"""
+      
         print("\nExcluindo pedido permanentemente...")
         
         
