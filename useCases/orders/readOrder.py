@@ -97,7 +97,7 @@ class ReadOrderStrategy(ReadStrategy):
                 print("Entrada inválida!")
     
     def _show_order_details(self, db, order_id):
-        """Show detailed information about a specific order"""
+       
         try:
             order = db.pedidos.find_one({"_id": ObjectId(order_id)})
             if not order:

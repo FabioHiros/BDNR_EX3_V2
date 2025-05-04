@@ -245,7 +245,7 @@ class UpdateOrderStrategy(UpdateStrategy):
             return False
             
     def _select_address(self, buyer):
-        """Helper method to select a delivery address"""
+      
         addresses = buyer.get("endereco", [])
         
         if not addresses:
@@ -268,7 +268,7 @@ class UpdateOrderStrategy(UpdateStrategy):
             return None
     
     def _select_products(self, db):
-        """Helper method to select products for the order"""
+     
         selected_products = []
         total_value = 0.0
         
